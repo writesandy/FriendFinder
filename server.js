@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // Friends (also in /app/data/friends.js)
 
-let friends =
+let friends = [
 {
     "name": "Sandra",
     "photo": "https://www.facebook.com/photo.php?fbid=10157415563609676&l=e4bde4ee99",
@@ -32,7 +32,7 @@ let friends =
         5,
         2,
     ]
-}
+}]
 
 // Route sending user to survey
 

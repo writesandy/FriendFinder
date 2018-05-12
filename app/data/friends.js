@@ -17,3 +17,5 @@ let friends = [
             2,
         ]
     }]
+
+    module.exports = friends

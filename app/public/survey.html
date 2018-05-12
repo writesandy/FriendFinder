@@ -203,7 +203,12 @@
         $(".chosen-select").val().trim()
       ]
     };
-    console.log(newfriend);
+    // console.log(newfriend);
+
+    $.post('/api/friends', newfriend)
+    .then(function(response){
+      console.log(response)
+    })
 });
 
 

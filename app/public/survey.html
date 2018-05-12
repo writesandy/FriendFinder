@@ -192,7 +192,7 @@
 
 <script type="text/javascript">
 
-  $(".submit").on("click", function(event) {
+  $("#submit").on("click", function(event) {
     event.preventDefault();
 
     // Here we grab the form elements
@@ -201,9 +201,9 @@
       photo: $("#photo").val().trim(),
       scores: [
         $(".chosen-select").val().trim()
-      ],
+      ]
     };
-    console.log(newFriend);
+    console.log(newfriend);
 });
 
 

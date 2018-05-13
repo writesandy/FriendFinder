@@ -14,7 +14,7 @@ app.get("/api/friends", function(req, res) {
 app.get("/api/friends/:friends", function(req, res) {
     var chosen = req.params.friends;
 
-    // console.log(friends);
+    console.log(friends);
 
     for (var i=0; i < friends.length; i++) {
         if (chosen === friends[i].routeName) {

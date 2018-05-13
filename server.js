@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const path = require ('path');
 const friends = require('./app/data/friends.js')
 
-console.log(friends);
+
+// console.log(friends);
 
 // Set up Express App
 
@@ -19,44 +20,47 @@ app.use(bodyParser.json());
 
 
 
+
 app.get("/", function(req,res){
-    res.sendFile(path.join(__dirname, "app/public/survey.html"));
+    res.sendFile(path.join(__dirname, "./app/public/survey.html"));
 });
 
+require("./app/routing/apiRoutes")(app);
+// require("./app/routing/htmlRoutes")(app);
 
-// Displays all charachters
+// // Displays all friends
 
-app.get("/api/friends", function(req, res) {
-    return res.json(friends);
-});
+// app.get("/api/friends", function(req, res) {
+//     return res.json(friends);
+// });
 
-// Displays a single friend or returns false
+// // Displays a single friend or returns false
 
-app.get("/api/friends/:friends", function(req, res) {
-    var chosen = req.params.friends;
+// app.get("/api/friends/:friends", function(req, res) {
+//     var chosen = req.params.friends;
 
-    console.log(friends);
+//     console.log(friends);
 
-    for (var i=0; i < friends.length; i++) {
-        if (chosen === friends[i].routeName) {
-            return res.json(friends[i]);
-        }
-    }
+//     for (var i=0; i < friends.length; i++) {
+//         if (chosen === friends[i].routeName) {
+//             return res.json(friends[i]);
+//         }
+//     }
 
-    return res.json(false);
+//     return res.json(false);
 
-});
+// });
 
-// Create New Friends - takes in JSON input
+// // Create New Friends - takes in JSON input
 
-app.post("/api/friends", function(req, res) {
+// app.post("/api/friends", function(req, res) {
 
-    var newfriend = req.body;
-    console.log(newfriend);
-    friends.push(newfriend);
-    res.json(newfriend);
+//     var newfriend = req.body;
+//     console.log(newfriend);
+//     friends.push(newfriend);
+//     res.json(newfriend);
 
-});
+// });
 
 
 
@@ -66,3 +70,4 @@ app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
   
+module.exports = app

@@ -70,7 +70,7 @@
     </select>
 
 
-    <!-- <h3><strong>Question 4</strong></h3>
+    <h3><strong>Question 4</strong></h3>
     <h4>You can hula hoop.</h4>
     <select class="chosen-select" id="q4">
       <option value=""></option>
@@ -148,7 +148,7 @@
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
-    </select> -->
+    </select>
 
     <br>
     <br>
@@ -200,14 +200,23 @@
       name: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
       scores: [
-        $(".chosen-select").val().trim()
+        $("#q1").val().trim(),
+        $("#q2").val().trim(),
+        $("#q3").val().trim(),
+        $("#q4").val().trim(),
+        $("#q5").val().trim(),
+        $("#q6").val().trim(),
+        $("#q7").val().trim(),
+        $("#q8").val().trim(),
+        $("#q9").val().trim(),
+        $("#q10").val().trim()
       ]
     };
     // console.log(newfriend);
 
     $.post('/api/friends', newfriend)
     .then(function(response){
-      console.log(response)
+      // console.log(response)
     })
 });
 

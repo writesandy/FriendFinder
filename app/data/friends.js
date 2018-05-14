@@ -34,5 +34,9 @@ let friends = [
             "2",
         ]
         },
+
+        { name: 'Jeremy',
+        photo: 'https://www.facebook.com/photo.php?fbid=10152510192084676&set=t.548134675&type=3&theater',
+        scores: [ '1', '1', '1', '1', '2', '1', '3', '1', '1', '1' ] },
     ]
     module.exports = friends

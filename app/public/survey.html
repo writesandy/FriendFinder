@@ -158,19 +158,19 @@
      Submit</button>
 
     <hr>
-    <!-- <footer class="footer">
+    <footer class="footer">
       <div class="container">
         <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
       </div>
-    </footer> -->
+    </footer>
 
   </div>
 
-  <!-- Modal
+  <!-- Modal -->
   <div id="results-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-      Modal content
+      <!-- Modal content -->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -178,7 +178,7 @@
         </div>
         <div class="modal-body">
           <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          <!-- <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt=""> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -188,14 +188,14 @@
     </div>
   </div> -->
 
-  <!-- CODE FOR BRINGING IN DATA FROM DOM -->
+
 
 <script type="text/javascript">
 
   $("#submit").on("click", function(event) {
     event.preventDefault();
 
-    // Here we grab the form elements
+    // Grab the form elements
     var newfriend = {
       name: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
@@ -214,11 +214,16 @@
     };
     // console.log(newfriend);
 
-    $.post('/api/friends', newfriend)
-    .then(function(response){
-      // console.log(response)
-    })
-});
+    $.post('/api/friends', newfriend, function(response){
+      $("#match-name").text(response.name);
+      //  $("match-img").attr("src", response.photo);
+       $("#results-modal").modal("toggle");
+    });
+
+    });
+
+
+
 
 
     </script>

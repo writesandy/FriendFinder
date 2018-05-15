@@ -3,7 +3,7 @@
 let friends = [
     {
         "name": "Sandra",
-        "photo": "https://www.facebook.com/photo.php?fbid=10157415563609676&l=e4bde4ee99",
+        "photo": "http://cdn.onlyinyourstate.com/wp-content/uploads/2017/11/1055bad56d9f8df86259736fd1c5a353.jpg",
         "scores": [
             "5",
             "5",
@@ -35,7 +35,7 @@ let friends = [
     },
     {  
          "name": "Mark Peterson",
-        "photo": "https://www.facebook.com/photo.php?fbid=10151191323854676&l=7b9d35d9f4",
+        "photo": "https://i.chzbgr.com/full/9034682624/h21BF4D82/",
         "scores": [
             "2",
             "4",
